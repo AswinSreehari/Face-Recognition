@@ -1,7 +1,9 @@
 # 🧠 Face Recognition System (Python + OpenCV + LBPH)
 
-This is a **real-time facial recognition system** built using **Python**, **OpenCV**, and the **LBPH (Local Binary Patterns Histogram)** algorithm.  
-It can identify people both from webcam video feed and static images, based on pre-trained datasets of faces.
+This project is a **real-time facial recognition system** built using **Python**, **OpenCV**, and the **LBPH (Local Binary Patterns Histogram)** algorithm.  
+It detects and recognizes faces from **live webcam video** or **static images**, based on a dataset of known individuals.  
+
+The system is lightweight, works **offline**, and can be easily retrained with new faces.
 
 ---
 
@@ -9,34 +11,59 @@ It can identify people both from webcam video feed and static images, based on p
 
 - ✅ Real-time face detection & recognition via webcam  
 - ✅ Recognition from static images  
-- ✅ Dataset-based training (easy to add new people)  
-- ✅ Modular architecture: capture / train / recognize  
-- ✅ Works offline (no internet needed)  
-- ✅ Supports `.jpg`, `.png`, `.webp` formats  
+- ✅ Easy training with your own dataset  
+- ✅ Modular architecture (Capture → Train → Recognize)  
+- ✅ Works completely offline (no internet required)  
+- ✅ Supports multiple image formats (`.jpg`, `.png`, `.webp`)  
+
+---
+
+## 🧠 How It Works
+
+1. **Capture Phase** – Capture multiple face images for each person (using webcam).  
+2. **Training Phase** – The system extracts facial features using LBPH and trains a model.  
+3. **Recognition Phase** – The trained model identifies known faces in real-time through the webcam or static images.
 
 ---
 
 ## 🛠️ Requirements
 
-- **Python 3.12+**  
-- **pip** (Python package manager)  
-- **A working webcam**  
+### Hardware
+- A system with a **webcam** (built-in or external)
 
-### Python Libraries
-- `opencv-contrib-python`
-- `numpy`
+### Software
+- **Windows 10/11 (64-bit)**  
+- **Python 3.12+**  
+- **pip** (Python package manager)
+
+### Python Libraries Used
+- `opencv-contrib-python`  
+- `numpy`  
 - `Pillow`
 
 ---
 
- ## 1️⃣ Activate virtual environment
+## ⚙️ 1️⃣ Installation & Setup
+
+Follow these steps to set up and run the project on your local machine 👇
+
+### Step 1 — Clone or Download the Project
+If you have Git installed:
+```powershell
+git clone https://github.com/AswinSreehari/Face-Recognition.git
+cd "Face-Recognition"
+
+## 1️⃣ Navigate to project folder
+cd "C:\Users\<YourName>\Desktop\Face Recognition"
+
+## 2️⃣ Activate virtual environment
 .\venv312\Scripts\Activate.ps1
 
-## 2️⃣ Capture your own images (optional)
+## 3️⃣ (Optional) Capture your own images
 python capture_samples.py "Your_Name" --count 20 --cam 0
 
-## 3️⃣ Train the recognizer model
+## 4️⃣ Train the model
 python train_lbph.py
 
-## 4️⃣ Run live recognition via webcam
+## 5️⃣ Run live recognition
 python recognize_lbph.py --cam 0 --threshold 90
