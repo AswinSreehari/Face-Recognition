@@ -55,16 +55,26 @@ cd "Face-Recognition"
 ```
 
 ### 1️⃣ Navigate to project folder
+```powershell
 cd "C:\Users\<YourName>\Desktop\Face Recognition"
+```
 
 ### 2️⃣ Activate virtual environment
+```powershell
 .\venv312\Scripts\Activate.ps1
+```
 
 ### 3️⃣ (Optional) Capture your own images
+```powershell
 python capture_samples.py "Your_Name" --count 20 --cam 0
+```
 
 ### 4️⃣ Train the model
+```powershell
 python train_lbph.py
+```
 
 ### 5️⃣ Run live recognition
+```powershell
 python recognize_lbph.py --cam 0 --threshold 90
+```
